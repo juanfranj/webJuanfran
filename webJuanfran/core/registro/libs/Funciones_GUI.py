@@ -34,7 +34,7 @@ def finRegistro():
 			"-------------------------------------------------------------------\n")
 		archivo.close()
 		#Reinicio los archivos que usa el bot.
-		path = "./files/bot.txt"
+		path = "core/registro/files/bot.txt"
 		archivo = open(path, "w")
 		archivo.write("END_REGISTRO")
 		archivo.close()
