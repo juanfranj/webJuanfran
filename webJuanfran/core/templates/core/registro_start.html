@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{%load static %}
+{% block title %}Registro Automatico{% endblock %}
+{% block content %}
+<section class="contenedor-main row justify-content-center">
+  <main class="col-8 ">
+      <div class="card">
+              <div class="card-body">
+                  <h3 class="card-title text-center">Registro Automático</h3>
+                  {% if inicio %}
+                  <h5 class="card-subtitle mb-2 text-muted text-center">Registro Automático Iniciado</h5>
+                  <hr>
+                  <button type="button" class="btn btn-primary btn-lg btn-block" disabled>Start</button>
+                  <a href="{% url 'stop' %}" class="btn btn-danger btn-lg btn-block">Stop</a>
+                  {% else %}
+                  <h5 class="card-subtitle mb-2 text-muted text-center">Error al iniciar: Conectar a la red local</h5>
+                  <hr>
+                  <a href="{% url 'start' %}" class="btn btn-primary btn-lg btn-block">Start</a>
+                  <button type="button" class="btn btn-danger btn-lg btn-block" disabled>Stop</button>
+                  {% endif %}
+              </div>
+      </div>
+  </main>
+</section>  
+{% endblock %}  

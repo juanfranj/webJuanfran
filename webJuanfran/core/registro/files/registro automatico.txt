@@ -1,0 +1,19 @@
+-----------------------------------------------Hacer-----------------------------------------------------------
+
+- Incluir movimiento del raton, con curva de blezer. y click humano
+
+- Hacer scrip que vaya incluyendo en el archivo registro un Aleatorio, donde el raton se mueve aleatoriamente
+en algun sitio de la pantalla. Cada x segundos.
+
+- En un futuro incluir funcionalidades como abrir chrome, o buscar cancion.
+
+-----------------------------------------------Hecho------------------------------------------------------------
+
+- Comprobar q autopy funcione con dos monitores.
+
+- Poner ordenadores en red, y compartir una carpeta. Donde se escribira dnd moverse.
+
+
+
+
+-----------------------------------------------Test-------------------------------------------------------------

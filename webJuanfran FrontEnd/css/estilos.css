@@ -1,0 +1,29 @@
+body {
+	background: #f0f3f5;
+	color: #fff;
+}
+
+header {
+	background: #ca4040;
+	margin-top: 20px;
+}
+
+.contenedor-main {
+	margin-bottom: 20px;
+}
+
+main {
+	background: #fff;
+	color: #424242;
+	padding: 20px 0
+}
+
+footer {
+	padding: 20px 0;
+	background: #1e1e1ea6;
+	color: #fff;
+}
+
+copyright {
+	color: #fff;
+}
