@@ -2,3 +2,4 @@ Django==2.0.2
 numpy==1.19.1
 Pillow==7.2.0
 PyAutoGUI==0.9.50
+django-ckeditor==5.4.0
