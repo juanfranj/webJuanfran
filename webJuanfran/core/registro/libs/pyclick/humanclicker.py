@@ -30,7 +30,8 @@ class HumanClicker():
         pyautogui.click()
 
     def real_click(self):
-        if randint(1, 50) != 1:
+        #Para implementar miss-click, != 1
+        if randint(1, 150) > 1:
             sleep(23 / randint(83,201))
             pyautogui.click()
         else:
@@ -47,7 +48,8 @@ class HumanClicker():
                 pyautogui.click(button = 'right',  duration = 0.2)
 
     def aleatorio(self):
-        if randint(1, 10) == 1:
+        # realiza un movimiento aleatorio por la pantalla
+        if randint(1, 50) == 1:
             x, y = pyautogui.size()
             i = randint(1,10)
             if i <= 3:
