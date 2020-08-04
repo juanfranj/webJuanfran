@@ -137,6 +137,23 @@ def encontrarMesa(mesa):
 				y = int(posicion[1]) + randint(55, 320)
 			archivo.close()
 
+	elif mesa == "Table_4":
+		try:
+			path = "Z:/Tables/Table_4/Posicion.txt"
+			archivo = open(path, "r")
+			posicion = (archivo.readline()).split(",")
+			x = int(posicion[0]) + randint(490,630) + 1920
+			y = int(posicion[1]) + randint(136, 275)
+			archivo.close()
+		except:
+			print("Error posicion mesa 4")
+			path = "Z:/Bot/posiciones/Posicion_table4.txt"
+			archivo = open(path, "r")
+			posicion = (archivo.readline()).split(",")
+			x = int(posicion[0]) + randint(490,630) + 1920
+			y = int(posicion[1]) + randint(136, 275)
+			archivo.close()
+
 	elif mesa == "Table_X":
 		x = randint(500,1000) + 1920
 		y = randint(500, 700)
