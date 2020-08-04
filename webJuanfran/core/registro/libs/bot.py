@@ -61,22 +61,30 @@ def acciones(actuar):
 	return posicion, acciones, mesa
 
 def encontrarMesa(mesa):
-
+	aleatorio = randint(1,10)
 	if mesa == "Table_1":
 		try :
 			path = "Z:/Tables/Table_1/Posicion.txt"
 			archivo = open(path, "r")
 			posicion = (archivo.readline()).split(",")
-			x = int(posicion[0]) + randint(490,630) + 1920
-			y = int(posicion[1]) + randint(136, 275)
+			if aleatorio < 5:
+				x = int(posicion[0]) + randint(465,590) + 1920
+				y = int(posicion[1]) + randint(65, 350)
+			else:
+				x = int(posicion[0]) + randint(20,110) + 1920
+				y = int(posicion[1]) + randint(55, 320)
 			archivo.close()
 		except:
 			print("Error posicion mesa 1")
 			path = "Z:/Bot/posiciones/Posicion_table1.txt"
 			archivo = open(path, "r")
 			posicion = (archivo.readline()).split(",")
-			x = int(posicion[0]) + randint(490,630) + 1920
-			y = int(posicion[1]) + randint(136, 275)
+			if aleatorio < 5:
+				x = int(posicion[0]) + randint(465,590) + 1920
+				y = int(posicion[1]) + randint(65, 350)
+			else:
+				x = int(posicion[0]) + randint(20,110) + 1920
+				y = int(posicion[1]) + randint(55, 320)
 			archivo.close()
 
 	elif mesa == "Table_2":
@@ -84,16 +92,24 @@ def encontrarMesa(mesa):
 			path = "Z:/Tables/Table_2/Posicion.txt"
 			archivo = open(path, "r")
 			posicion = (archivo.readline()).split(",")
-			x = int(posicion[0]) + randint(490,630) + 1920
-			y = int(posicion[1]) + randint(136, 275)
+			if aleatorio < 5:
+				x = int(posicion[0]) + randint(465,590) + 1920
+				y = int(posicion[1]) + randint(65, 350)
+			else:
+				x = int(posicion[0]) + randint(20,110) + 1920
+				y = int(posicion[1]) + randint(55, 320)
 			archivo.close()
 		except:
 			print("Error posicion mesa 2")
 			path = "Z:/Bot/posiciones/Posicion_table2.txt"
 			archivo = open(path, "r")
 			posicion = (archivo.readline()).split(",")
-			x = int(posicion[0]) + randint(490,630) + 1920
-			y = int(posicion[1]) + randint(136, 275)
+			if aleatorio < 5:
+				x = int(posicion[0]) + randint(465,590) + 1920
+				y = int(posicion[1]) + randint(65, 350)
+			else:
+				x = int(posicion[0]) + randint(20,110) + 1920
+				y = int(posicion[1]) + randint(55, 320)
 			archivo.close()
 
 	elif mesa == "Table_3":
@@ -101,16 +117,24 @@ def encontrarMesa(mesa):
 			path = "Z:/Tables/Table_3/Posicion.txt"
 			archivo = open(path, "r")
 			posicion = (archivo.readline()).split(",")
-			x = int(posicion[0]) + randint(490,630) + 1920
-			y = int(posicion[1]) + randint(136, 275)
+			if aleatorio < 5:
+				x = int(posicion[0]) + randint(465,590) + 1920
+				y = int(posicion[1]) + randint(65, 350)
+			else:
+				x = int(posicion[0]) + randint(20,110) + 1920
+				y = int(posicion[1]) + randint(55, 320)
 			archivo.close()
 		except:
 			print("Error posicion mesa 3")
 			path = "Z:/Bot/posiciones/Posicion_table3.txt"
 			archivo = open(path, "r")
 			posicion = (archivo.readline()).split(",")
-			x = int(posicion[0]) + randint(490,630) + 1920
-			y = int(posicion[1]) + randint(136, 275)
+			if aleatorio < 5:
+				x = int(posicion[0]) + randint(465,590) + 1920
+				y = int(posicion[1]) + randint(65, 350)
+			else:
+				x = int(posicion[0]) + randint(20,110) + 1920
+				y = int(posicion[1]) + randint(55, 320)
 			archivo.close()
 
 	elif mesa == "Table_X":
