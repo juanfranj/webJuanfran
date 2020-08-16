@@ -10,6 +10,7 @@ def salirAplicacion(root):
 
 def inicioRegistro(inicioBot):
 	path = "Z:/Bot/Acciones.txt"
+	#path = "C:/Capturador/Bot/Acciones.txt"
 	inicio = False
 	if os.path.isfile(path):
 		inicio = True
@@ -61,6 +62,7 @@ def inicio_ArchivosBot():
 	archivo.close()
 
 	path = "Z:/Bot/Acciones.txt"
+	#path = "Z:/Bot/Acciones.txt"
 	if os.path.isfile(path):
 		archivo = open(path, "w")
 		archivo.write("Table_X:INI:25\n")
@@ -68,6 +70,7 @@ def inicio_ArchivosBot():
 	print("Fin registro")
 	#Escribo el final de la sesion en el registro.
 	path = "Z:/Bot/Registro.txt"
+	#path = "C:/Capturador/Registro.txt"
 	archivo = open(path, "a")
 	archivo.write(f"Inicio Sesion: {time.ctime(sec)}\n"
 		f"-------------------------------------------------------------------\n")

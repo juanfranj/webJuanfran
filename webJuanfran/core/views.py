@@ -23,3 +23,12 @@ def stop(request):
         pagina = "core/registro_stop.html"
 
     return render(request, "core/registro_stop.html" , {"fin":fin})
+
+def automaticRegister(request):
+    comenzar = False
+    diccionario = {}
+    if request.GET["mesas"] != "" and len(request.GET["torneos"])>0:
+        comenzar = True
+        diccionario = {"comenzar":comenzar, "torneos":request.GET["torneos"], "mesas":request.GET["mesas"], "datos":request.GET, "tamaño":len(request.GET)}
+    return render(request, "core/registroAutomatico.html", diccionario)
+
