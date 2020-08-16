@@ -64,12 +64,18 @@
     <div class="col-8">
         <div class="alert alert-success">
             <strong> Comienza Registro Automatico: </strong></a>
-            <ul class="mt-1">
+            <ul>
                 <li>
-                    <p>Torneos: {{torneos}}</p>
+                    <p class="mt-2">Registrando en torneos:</p>
+                        <ul >{% for torneo in torneos %}
+                            <li>
+                                <p>Heads-up: <strong>{{torneo}}s</strong></p>
+                                </li>
+                            {% endfor %}
+                        </ul>       
                 </li>
                 <li>
-                    <p>Número Mesas: {{mesas}}</p>
+                    <p>Número Mesas: <strong>{{mesas}}</strong></p>
                 </li>
             </ul>
         </div>

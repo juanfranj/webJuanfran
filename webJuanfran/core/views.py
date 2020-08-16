@@ -27,8 +27,10 @@ def stop(request):
 def automaticRegister(request):
     comenzar = False
     diccionario = {}
-    if request.GET["mesas"] != "" and len(request.GET["torneos"])>0:
+    if  len(request.GET) > 1 and request.GET["mesas"] != "" and len(request.GET["torneos"])>0:
         comenzar = True
-        diccionario = {"comenzar":comenzar, "torneos":request.GET["torneos"], "mesas":request.GET["mesas"], "datos":request.GET, "tamaño":len(request.GET)}
+        for i in request.GET.getlist("torneos"):
+            print(i)
+        diccionario = {"comenzar":comenzar, "torneos":request.GET.getlist("torneos"), "mesas":request.GET["mesas"], "datos":request.GET, "tamaño":len(request.GET)}
     return render(request, "core/registroAutomatico.html", diccionario)
 
