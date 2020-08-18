@@ -1,0 +1,85 @@
+{% extends 'core/base.html' %}
+{%load static %}
+{% block title %}Registro Automatico{% endblock %}
+{% block content %}
+
+<section class="contenedor-main row justify-content-center">
+  <main class="col-8 mt-4 ">
+    <div class="row">
+        <div class="col">
+            <form action="/registroAutomatico" method="get">
+                <h3 class="text-center">Registro Automatico</h3>
+                <hr>
+                <h4>Torneos</h4>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="torneos" id="torneo3" value="3"> 3€
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="torneos" id="torneo5" value="5"> 5€
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="torneos" id="torneo10" value="10"> 10€
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="torneos" id="torneo20" value="20"> 20€
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="torneos" id="torneo30" value="30"> 30€
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="torneos" id="torneo50" value="50"> 50€
+                    </label>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <h4><label for="mesas">Mesas</label></h4>
+                    <select name="mesas" id="mesas" class="form-control">
+                        <option value=""></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <hr>
+                <button class="btn btn-primary btn-block" type="submit">Start</button>
+
+        </div>
+    </div>
+  </main>
+</section>  
+{% if comenzar %}
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div class="alert alert-success">
+            <strong> Comienza Registro Automatico: </strong></a>
+            <ul>
+                <li>
+                    <p class="mt-2">Registrando en torneos:</p>
+                        <ul >{% for torneo in torneos %}
+                            <li>
+                                <p>Heads-up: <strong>{{torneo}}s</strong></p>
+                                </li>
+                            {% endfor %}
+                        </ul>       
+                </li>
+                <li>
+                    <p>Número Mesas: <strong>{{mesas}}</strong></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}  
