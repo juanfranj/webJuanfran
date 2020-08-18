@@ -190,7 +190,7 @@ def actuar(pos, accion,mesa):
 	#---------------Muevo el raton con pyclick que genera una curva Beizer---------------
 	hc = HumanClicker()
 	if (distancia(x, y) > 130):
-		hc.move((x, y),uniform(0.1, 0.2))
+		hc.move((x, y),uniform(0.4, 0.6))
 	hc.real_click()
 	#---------------Se mueve el raton con autoguy directamente---------------------------
 	#auto.moveTo(xini, yini, uniform(0.2,0.6), tipo[randint(0,3)])
