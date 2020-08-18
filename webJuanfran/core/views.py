@@ -34,3 +34,15 @@ def automaticRegister(request):
         diccionario = {"comenzar":comenzar, "torneos":request.GET.getlist("torneos"), "mesas":request.GET["mesas"], "datos":request.GET, "tamaño":len(request.GET)}
     return render(request, "core/registroAutomatico.html", diccionario)
 
+def registroManual(request):
+    escribir_registro()
+    return render(request, "core/registroAutomatico.html")
+
+def escribir_registro():
+    try:
+        path = "Z:/Bot/Acciones.txt"
+        archivo = open(path, "a")
+    except:
+        path = "C:/Capturador/Bot/Acciones.txt"
+        archivo = open(path, "a")
+    archivo.write(f"\nREGISTRO")

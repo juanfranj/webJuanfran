@@ -8,7 +8,9 @@
               <div class="card-body">
                   <h3 class="card-title text-center">Registro Automático</h3>
                   {% if not fin %}
-                  <h5 class="card-subtitle mb-2 text-muted text-center">Error al finalizar: Conectar a la red local</h5>
+                  <div class="alert alert-danger card-subtitle mb-2 text-muted text-center" role="alert">
+                    <h5 style="color:black">Error al Finalizar: Conectar a la red local</h5>
+                  </div>
                   <hr>
                   <button type="button" class="btn btn-primary btn-lg btn-block" disabled>Start</button>
                   <a href="{% url 'stop' %}" class="btn btn-danger btn-lg btn-block">Stop</a>

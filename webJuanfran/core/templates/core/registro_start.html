@@ -13,7 +13,9 @@
                   <button type="button" class="btn btn-primary btn-lg btn-block" disabled>Start</button>
                   <a href="{% url 'stop' %}" class="btn btn-danger btn-lg btn-block">Stop</a>
                   {% else %}
-                  <h5 class="card-subtitle mb-2 text-muted text-center">Error al iniciar: Conectar a la red local</h5>
+                  <div class="alert alert-danger card-subtitle mb-2 text-muted text-center" role="alert">
+                    <h5 style="color:black">Error al iniciar: Conectar a la red local</h5>
+                  </div>
                   <hr>
                   <a href="{% url 'start' %}" class="btn btn-primary btn-lg btn-block">Start</a>
                   <button type="button" class="btn btn-danger btn-lg btn-block" disabled>Stop</button>

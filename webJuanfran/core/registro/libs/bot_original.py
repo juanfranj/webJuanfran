@@ -11,8 +11,6 @@ from multiprocessing import Process , Queue
 from random import randint, uniform
 from time import sleep
 from core.registro.libs.pyclick import HumanClicker
-#from core.registro.registro import registrarSit
-from ..registro import registrarSit
 
 def leerArchivo(cola):
 	try: 
@@ -50,8 +48,7 @@ def ejecutarAccion(accion):
 	posicion, accion, mesa = acciones(accion)
 	#if posicion[0] < 2000:
 		#actuar(posicion, accion)
-	if mesa != "REGISTRO":
-		actuar(posicion, accion, mesa)
+	actuar(posicion, accion, mesa)
 		#print(posicion, accion)
 
 def acciones(actuar):
@@ -164,7 +161,7 @@ def encontrarMesa(mesa):
 				x = int(posicion[0]) + randint(20,110) + 1920
 				y = int(posicion[1]) + randint(55, 320)
 			archivo.close()
-			
+
 	elif mesa == "Table_X":
 		x = randint(500,1000) + 1920
 		y = randint(500, 700)
@@ -172,13 +169,7 @@ def encontrarMesa(mesa):
 	elif mesa == "END" or mesa == "END_REGISTRO":
 		x = randint(500,1000) + 1920
 		y = randint(500, 700)
-	
-	elif mesa == "REGISTRO":
-		registro = registrarSit()
-		print(registro)
-		if not registro:
-			x, y = [666, 666]
-
+		
 	else:
 		x, y = [0, 0]
 
@@ -199,7 +190,7 @@ def actuar(pos, accion,mesa):
 	#---------------Muevo el raton con pyclick que genera una curva Beizer---------------
 	hc = HumanClicker()
 	if (distancia(x, y) > 130):
-		hc.move((x, y),uniform(0.1, 0.2))
+		hc.move((x, y),uniform(0.4, 0.6))
 	hc.real_click()
 	#---------------Se mueve el raton con autoguy directamente---------------------------
 	#auto.moveTo(xini, yini, uniform(0.2,0.6), tipo[randint(0,3)])
@@ -285,7 +276,6 @@ def accionDepurada(accion,mesa):
 			letra = calculoBet(accion, mesa)
 			registro.write(f"Accion = BET presiona: {letra}\n")
 			auto.press(letra)
-		#-------------------------Registro----------------------------------------------------#
 	except:
 		print("Error al escribir letra")
 
@@ -401,25 +391,7 @@ def crearArchivo():
 		copiar.close()
 		sleep(3)
 	archivo.close()
-
-def activarBotonMesa(pos_x, pos_y):
 	
-	auto.FAILSAFE = False
-	#---------------Muevo el raton con pyclick que genera una curva Beizer---------------
-	hc = HumanClicker()
-	hc.move((pos_x, pos_y),uniform(0.4, 0.5))
-	hc.real_click()
-	
-def activarBotonRegistro(boton):
-	x, y, w, h = boton["registro"]
-	pos_x = x + int(w/2)
-	pos_y = y + int(h/2)
-	auto.FAILSAFE = False
-	#---------------Muevo el raton con pyclick que genera una curva Beizer---------------
-	hc = HumanClicker()
-	hc.move((pos_x, pos_y),uniform(0.4, 0.5))
-	hc.real_click()
-
 """
 if __name__ == "__main__":
 
