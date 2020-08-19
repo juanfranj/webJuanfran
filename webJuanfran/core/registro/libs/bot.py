@@ -50,6 +50,7 @@ def ejecutarAccion(accion):
 	posicion, accion, mesa = acciones(accion)
 	#if posicion[0] < 2000:
 		#actuar(posicion, accion)
+	print(f"mesa = {mesa} antes de actuar")
 	if mesa != "REGISTRO":
 		actuar(posicion, accion, mesa)
 		#print(posicion, accion)
@@ -175,9 +176,12 @@ def encontrarMesa(mesa):
 	
 	elif mesa == "REGISTRO":
 		registro = registrarSit()
-		print(registro)
 		if not registro:
+			print("Error registrando, registro = ", registro)
 			x, y = [666, 666]
+		else:
+			print("Registrando sit, registro = ", registro)
+			x, y = [333, 333]
 
 	else:
 		x, y = [0, 0]
@@ -199,7 +203,7 @@ def actuar(pos, accion,mesa):
 	#---------------Muevo el raton con pyclick que genera una curva Beizer---------------
 	hc = HumanClicker()
 	if (distancia(x, y) > 130):
-		hc.move((x, y),uniform(0.1, 0.2))
+		hc.move((x, y),uniform(0.4, 0.7))
 	hc.real_click()
 	#---------------Se mueve el raton con autoguy directamente---------------------------
 	#auto.moveTo(xini, yini, uniform(0.2,0.6), tipo[randint(0,3)])
@@ -207,7 +211,9 @@ def actuar(pos, accion,mesa):
 	#auto.click(button = "left", duration = 0.2)
 	#------------------------------------------------------------------------------------
 	#-------------------------------------Actuar-----------------------------------------
-	accionDepurada(accion, mesa)
+	print(f"mesa = {mesa} antes de accion depurada")
+	if mesa != "REGISTRO":
+		accionDepurada(accion, mesa)
 	#------------------------------------------------------------------------------------
 	#auto.moveTo(xini, yini, uniform(0.2,0.65), tipo[randint(0,3)])
 	hc.aleatorio()

@@ -28,7 +28,7 @@ def capturador_winamax(comenzar):
 def obtener_lobby(imagen):
     ## aplico los filtros para encontrar los bordes
     grayscale = cv2.cvtColor(imagen, cv2.COLOR_RGB2GRAY)
-    ret, thresh = cv2.threshold(grayscale, 80, 255,  cv2.THRESH_BINARY)
+    ret, thresh = cv2.threshold(grayscale, 100, 255,  cv2.THRESH_BINARY)
     kernel = np.ones((3,3),np.uint8)
     opening = cv2.morphologyEx(thresh,cv2.MORPH_OPEN,kernel, iterations = 1)
     ret, thresh = cv2.threshold(opening, 100, 255,  cv2.THRESH_BINARY_INV)
@@ -228,7 +228,7 @@ def buscar_registrar_final(imagen, posicion_lobby):
     return botones
 
 
-def registrarSit_():
+def registrarSit():
     registrar = True
     try:
         pantalla = capturarPantalla()
@@ -245,10 +245,13 @@ def registrarSit_():
         lobby, posicion_lobby = obtener_lobby(pantalla)
         posicion_registro_final = buscar_registrar_final(lobby, posicion_lobby)
         activarBotonRegistro(posicion_registro_final)
-        
+    except UnboundLocalError as e:
+        print("UnboundLocalError:",e) 
+        registrar = False 
     except:
         registrar = False
         print("No se ha podido registrar:")
+        
     return registrar
     """
     for linea in texto:
@@ -264,7 +267,7 @@ def registrarSit_():
     cv2.imwrite("./images/mesas.png", mesas)
     cv2.imwrite("./images/real.png", pantalla)
     """
-def registrarSit():
+def registrarSit_():
     registrar = True
     
     pantalla = capturarPantalla()
