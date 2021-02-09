@@ -31,7 +31,8 @@ class HumanClicker():
 
     def real_click(self):
         #Para implementar miss-click, != 1
-        if randint(1, 150) > 1:
+        # Elimino el missclick poniendo un random mayor a 0
+        if randint(1, 150) > 0:
             sleep(23 / randint(83,201))
             pyautogui.click()
         else:
